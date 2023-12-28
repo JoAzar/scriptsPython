@@ -4,4 +4,4 @@ import mouse
 
 mouse.click('left')
 mouse.get_position()
-print("esta mierda no anda en Linux...")
+print("esta ... no anda en Linux...")

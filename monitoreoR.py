@@ -1,7 +1,6 @@
 import psutil
 import threading
 import os
-import keyboard
 import time
 
 # Definir colores
@@ -30,7 +29,7 @@ def monitorearCpu():
         print(f"{amarillo}Memoria Usada: {rojo}[ {mem_virt} MB ]{resetColor}")
         print(f"{amarillo}Memoria Libre: {rojo}[ {avail_mem}% ]{resetColor}")
         print(amarillo + "--------------------------------------" + resetColor)
-        print(amarillo + "Presiona 'q' para salir..." + resetColor)
+        print(amarillo + "Presiona 'q' y Enter para salir..." + resetColor)
 
 # Evento de salida
 salir = threading.Event()
@@ -41,8 +40,10 @@ if __name__ == '__main__':
         monitor_thread = threading.Thread(target=monitorearCpu)
         monitor_thread.start()
 
-        # Esperar a que se presione 'q' para salir
-        keyboard.wait('q')
+        # Esperar a que se presione 'q' para salir usando input()
+        while True:
+            if input() == 'q':
+                break
     except KeyboardInterrupt:
         pass
     finally:

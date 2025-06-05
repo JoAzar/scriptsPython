@@ -23,7 +23,7 @@ def ejecutar_comando_terminal(comando):
         print("Error al ejecutar el comando:", e)
 
 if __name__ == "__main__":
-    ruta_sonido = "/home/r3d/Documentos/actualizar/sonido.mp3"
+    ruta_sonido = "ruta_al_archivo_de_sonido/sonido.mp3"
     if os.path.exists(ruta_sonido):
         ejecutar_comando_terminal("apt update && apt upgrade")
         time.sleep(3)
